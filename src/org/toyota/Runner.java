@@ -6,7 +6,7 @@ import org.toyota.car.models.Solara;
 
 public class Runner {
     public static void main(String[] args) {
-        GasTank gasTank = new GasTank();
+        GasTank gasTank = new GasTank(0);
         Engine engine = new Engine();
         Electrics electrics = new Electrics();
         HeadLights headLights = new HeadLights();

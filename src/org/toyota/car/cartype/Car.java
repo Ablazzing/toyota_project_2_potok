@@ -97,4 +97,8 @@ public abstract class Car {
     public Wheel[] getWheels() {
         return wheels;
     }
+
+    public void refuel(int volume) {
+        this.gasTank.setVolume(this.gasTank.getVolume() + volume);
+    }
 }
