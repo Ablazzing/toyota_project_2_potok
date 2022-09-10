@@ -2,6 +2,7 @@ package org.toyota.car.cartype;
 
 import org.toyota.car.StartCarException;
 import org.toyota.car.details.*;
+import org.toyota.car.factory.Country;
 
 public abstract class Car {
     private String color;
@@ -15,10 +16,11 @@ public abstract class Car {
     private Electrics electrics;
     private HeadLights headLights;
     private CarWheelRadius carWheelRadius;
+    private Country country;
 
     public Car(String color, int maxSpeed, TransmissionType transmissionType, boolean isMove, double price,
                GasTank gasTank, Wheel[] wheels, Engine engine, Electrics electrics, HeadLights headLights,
-               CarWheelRadius carWheelRadius) {
+               CarWheelRadius carWheelRadius, Country country) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmissionType = transmissionType;
@@ -30,6 +32,7 @@ public abstract class Car {
         this.electrics = electrics;
         this.headLights = headLights;
         this.carWheelRadius = carWheelRadius;
+        this.country = country;
         for (Wheel wheel : wheels) {
             if (wheel.getWheelRadius() != carWheelRadius) {
                 throw new RuntimeException("Радиус передаваемых колес должен быть " + wheel.getWheelRadius());

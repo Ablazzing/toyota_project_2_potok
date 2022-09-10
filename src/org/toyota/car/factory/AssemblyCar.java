@@ -29,7 +29,7 @@ public class AssemblyCar {
         CruiseControl cruiseControl = detailsFactory.createCruiseControl();
 
         return new Camry(color, 250, TransmissionType.AUTOMATIC, false, price, gasTank, wheels, engine,
-                electrics, headLights, CarWheelRadius.R17, cruiseControl, usb);
+                electrics, headLights, CarWheelRadius.R17, cruiseControl, usb, this.country);
     }
 
     public Solara createSolara(String color, double price) {
@@ -42,7 +42,7 @@ public class AssemblyCar {
         MiniFridge miniFridge = detailsFactory.createMiniFridge();
 
         return new Solara(color, 300, TransmissionType.ROBOT, false, price, gasTank, wheels, engine,
-                electrics, headLights, CarWheelRadius.R16, roof, miniFridge);
+                electrics, headLights, CarWheelRadius.R16, roof, miniFridge, this.country);
     }
 
     public Hiance createHiance(String color, double price) {
@@ -54,7 +54,7 @@ public class AssemblyCar {
         Wheel safeWheel = detailsFactory.createSafeWheel(CarWheelRadius.R20);
 
         return new Hiance(color, 150, TransmissionType.MECHANIC, false, price, gasTank, wheels, engine,
-                electrics, headLights, CarWheelRadius.R20, 2000, safeWheel);
+                electrics, headLights, CarWheelRadius.R20, 2000, safeWheel, this.country);
     }
 
     public Dyna createDyna(String color, double price) {
@@ -66,6 +66,6 @@ public class AssemblyCar {
         Socket socket = detailsFactory.createSocket();
 
         return new Dyna(color, 180, TransmissionType.MECHANIC, false, price, gasTank, wheels, engine,
-                electrics, headLights, CarWheelRadius.R20, 3000, socket);
+                electrics, headLights, CarWheelRadius.R20, 3000, socket, this.country);
     }
 }

@@ -1,6 +1,7 @@
 package org.toyota;
 
 import org.toyota.car.details.*;
+import org.toyota.car.factory.Country;
 import org.toyota.car.models.Camry;
 import org.toyota.car.models.Solara;
 
@@ -15,7 +16,7 @@ public class Runner {
         Usb usb = new Usb();
 
         Camry camry = new Camry("black", 250, TransmissionType.AUTOMATIC, false, 10000,
-                gasTank, wheels, engine, electrics, headLights, CarWheelRadius.R17, cruiseControl, usb);
+                gasTank, wheels, engine, electrics, headLights, CarWheelRadius.R17, cruiseControl, usb, Country.RUSSIA);
         camry.onMusic();
     }
 
