@@ -104,4 +104,8 @@ public abstract class Car {
     public void refuel(int volume) {
         this.gasTank.setVolume(this.gasTank.getVolume() + volume);
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
