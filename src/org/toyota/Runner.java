@@ -3,7 +3,6 @@ package org.toyota;
 import org.toyota.car.details.*;
 import org.toyota.car.factory.Country;
 import org.toyota.car.models.Camry;
-import org.toyota.car.models.Solara;
 
 public class Runner {
     public static void main(String[] args) {

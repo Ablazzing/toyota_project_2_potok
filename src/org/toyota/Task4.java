@@ -1,6 +1,5 @@
 package org.toyota;
 
-import org.toyota.car.StartCarException;
 import org.toyota.car.cartype.Car;
 import org.toyota.car.factory.AssemblyCar;
 import org.toyota.car.factory.Country;

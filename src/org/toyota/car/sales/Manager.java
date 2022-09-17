@@ -6,15 +6,30 @@ import org.toyota.car.storage.CarNotExistException;
 import org.toyota.car.storage.CarStorage;
 
 public class Manager {
+    private String name;
     private CarStorage carStorage;
     private AssemblyCar assemblyCar;
+    private Report report;
 
     public Manager(CarStorage carStorage, AssemblyCar assemblyCar) {
         this.carStorage = carStorage;
         this.assemblyCar = assemblyCar;
     }
 
+    public Manager(String name, CarStorage carStorage, AssemblyCar assemblyCar) {
+        this.name = name;
+        this.carStorage = carStorage;
+        this.assemblyCar = assemblyCar;
+        this.report = new Report(name);
+    }
+
     public Car saleCar(Customer customer) throws CustomerHasNoMoneyException {
+        Car car = saleCarHelper(customer);
+        report.addCar(car);
+        return car;
+    }
+
+    private Car saleCarHelper(Customer customer) throws CustomerHasNoMoneyException {
         if (customer.getMoney() >= ModelPrice.DYNA.getPrice()) {
             try {
                 return carStorage.getDyna();
@@ -42,5 +57,9 @@ public class Manager {
         }
 
         throw new CustomerHasNoMoneyException("У клиента " + customer.getName() + " нет денег");
+    }
+
+    public Report getReport() {
+        return report;
     }
 }
